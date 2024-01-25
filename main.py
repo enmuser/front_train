@@ -8,7 +8,7 @@ def create_parser():
     parser = argparse.ArgumentParser()
     # Set-up parameters
     parser.add_argument('--device', default='cuda', type=str, help='Name of device to use for tensor computations (cuda/cpu)')
-    parser.add_argument('--res_dir', default='/kaggle/working/MAUSelf/results', type=str)
+    parser.add_argument('--res_dir', default='/kaggle/working/front_train/results', type=str)
     parser.add_argument('--ex_name', default='Debug', type=str)
     parser.add_argument('--use_gpu', default=True, type=bool)
     parser.add_argument('--gpu', default=0, type=int)
@@ -81,9 +81,9 @@ def create_parser():
     parser.add_argument('--n_gpu', type=int, default=1)
     # /kaggle/input/movingmnist/model.ckpt-168000
     parser.add_argument('--pretrained_model', type=str, default='')
-    parser.add_argument('--perforamnce_dir', type=str, default='/kaggle/working/MAUSelf/results/mau/')
-    parser.add_argument('--save_dir', type=str, default='/kaggle/working/MAUSelf/checkpoints/mau/')
-    parser.add_argument('--gen_frm_dir', type=str, default='/kaggle/working/MAUSelf/results/mau/')
+    parser.add_argument('--perforamnce_dir', type=str, default='/kaggle/working/front_train/results/mau/')
+    parser.add_argument('--save_dir', type=str, default='/kaggle/working/front_train/checkpoints/mau/')
+    parser.add_argument('--gen_frm_dir', type=str, default='/kaggle/working/front_train/results/mau/')
     parser.add_argument('--scheduled_sampling', type=bool, default=True)
     parser.add_argument('--sampling_stop_iter', type=int, default=50000)
     parser.add_argument('--sampling_start_value', type=float, default=1.0)

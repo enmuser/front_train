@@ -133,12 +133,12 @@ class MovingMNIST(data.Dataset):
         for t in range(length):
             img = images[t]
             name = str(t) + '.png'
-            file_name = os.path.join("/kaggle/working/MAUSelf/results/mau/video/file", name)
+            file_name = os.path.join("/kaggle/working/front_train/results/mau/video/file", name)
             cv2.imwrite(file_name, img.astype(np.uint8))
-        img2video(image_root="/kaggle/working/MAUSelf/results/mau/video/file/", dst_name="/kaggle/working/MAUSelf/results/mau/video/file/images.mp4")
+        img2video(image_root="/kaggle/working/front_train/results/mau/video/file/", dst_name="/kaggle/working/front_train/results/mau/video/file/images.mp4")
         backSub = cv2.createBackgroundSubtractorMOG2()
         # backSub = cv.createBackgroundSubtractorKNN()
-        capture = cv2.VideoCapture(cv2.samples.findFileOrKeep("/kaggle/working/MAUSelf/results/mau/video/file/images.mp4"))
+        capture = cv2.VideoCapture(cv2.samples.findFileOrKeep("/kaggle/working/front_train/results/mau/video/file/images.mp4"))
         count = 0
         while True:
             ret, frame = capture.read()
