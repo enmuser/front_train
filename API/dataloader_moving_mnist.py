@@ -12,7 +12,7 @@ from API.ImagesToVideo import img2video
 
 def load_mnist(root):
     # Load MNIST dataset for generating training data.
-    path = os.path.join(root, 'moving_mnist/train-images-idx3-ubyte.gz')
+    path = os.path.join(root, 'train-images.idx3-ubyte')
     with gzip.open(path, 'rb') as f:
         mnist = np.frombuffer(f.read(), np.uint8, offset=16)
         mnist = mnist.reshape(-1, 28, 28)
@@ -21,7 +21,7 @@ def load_mnist(root):
 
 def load_fixed_set(root):
     # Load the fixed dataset
-    filename = 'moving_mnist/mnist_test_seq.npy'
+    filename = 'mnist_test_seq.npy'
     path = os.path.join(root, filename)
     dataset = np.load(path)
     dataset = dataset[..., np.newaxis]
