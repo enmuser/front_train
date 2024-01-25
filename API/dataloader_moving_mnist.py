@@ -1,6 +1,4 @@
-
 import os
-import gzip
 import random
 import numpy as np
 import torch
@@ -13,7 +11,7 @@ from API.ImagesToVideo import img2video
 def load_mnist(root):
     # Load MNIST dataset for generating training data.
     path = os.path.join(root, 'train-images.idx3-ubyte')
-    with gzip.open(path, 'rb') as f:
+    with open(path, 'rb') as f:
         mnist = np.frombuffer(f.read(), np.uint8, offset=16)
         mnist = mnist.reshape(-1, 28, 28)
     return mnist
